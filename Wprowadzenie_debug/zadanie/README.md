@@ -3,7 +3,7 @@
 
 # 📝 Zadanie: Postawienie drugiego Gradio z mniejszym Whisperem
 
-Uruchom usługę `gradio-whisper` z modelem **Whisper Small**.
+Uruchom usługę `gradio-whisper` z modelem **Whisper Tiny**.
 
 ---
 
@@ -30,6 +30,8 @@ docker run -d --name gradio-whisper -p 8000:8000 gradio-whisper:latest
 ## 3. Przetestuj w przeglądarce przez guacamole lub przez forwarding portu
 
 * Whisper Tiny → [http://localhost:8000](http://localhost:8000)
+
+np. plik audio: https://github.com/marcin119a/data/blob/main/Alloy_tts-1_1x_2024-10-28T09_42_03-535Z.mp3
 
 ---
 
