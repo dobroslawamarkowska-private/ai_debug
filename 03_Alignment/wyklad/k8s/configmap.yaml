@@ -10,8 +10,9 @@ data:
   OUTPUT_DIR: "/data"
   
   # City-specific configurations
-  warszawa_pages: "1"
-  wroclaw_pages: "1"
+  warszawa_pages: "24"
+  wroclaw_pages: "8"
+  lodz_pages: "7"
   
   # Scraper settings
   USER_AGENT: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"

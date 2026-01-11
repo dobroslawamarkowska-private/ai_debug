@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: scraper-wroclaw
+  labels:
+    city: wroclaw
+spec:
+  template:
+    metadata:
+      labels:
+        city: wroclaw
+    spec:
+      containers:
+      - name: scraper
+        env:
+        - name: CITY
+          value: "wroclaw"
+        - name: PAGES
+          valueFrom:
+            configMapKeyRef:
+              key: wroclaw_pages
+

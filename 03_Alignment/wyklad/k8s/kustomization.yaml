@@ -7,9 +7,26 @@ resources:
   - namespace.yaml
   - configmap.yaml
   - pvc.yaml
-  - job-warszawa.yaml
-  - job-wroclaw.yaml
+  - job-base.yaml
   - cronjob.yaml
+
+replicas:
+  - name: scraper-CITY_PLACEHOLDER
+    count: 3
+
+patches:
+  - path: job-lodz-patch.yaml
+    target:
+      kind: Job
+      name: scraper-CITY_PLACEHOLDER-0
+  - path: job-wroclaw-patch.yaml
+    target:
+      kind: Job
+      name: scraper-CITY_PLACEHOLDER-1
+  - path: job-warszawa-patch.yaml
+    target:
+      kind: Job
+      name: scraper-CITY_PLACEHOLDER-2
 
 labels:
 - pairs:

@@ -1,17 +1,17 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: scraper-warszawa
+  name: scraper-CITY_PLACEHOLDER
   namespace: default
   labels:
     app: scraper
-    city: warszawa
+    city: CITY_PLACEHOLDER
 spec:
   template:
     metadata:
       labels:
         app: scraper
-        city: warszawa
+        city: CITY_PLACEHOLDER
     spec:
       restartPolicy: OnFailure
       containers:
@@ -20,12 +20,12 @@ spec:
         imagePullPolicy: IfNotPresent
         env:
         - name: CITY
-          value: "warszawa"
+          value: "CITY_PLACEHOLDER"
         - name: PAGES
           valueFrom:
             configMapKeyRef:
               name: scraper-config
-              key: warszawa_pages
+              key: CITY_PLACEHOLDER_pages
         - name: DELAY
           valueFrom:
             configMapKeyRef:
@@ -52,3 +52,4 @@ spec:
           claimName: scraper-data-pvc
   backoffLimit: 3
   activeDeadlineSeconds: 3600  # 1 hour timeout
+

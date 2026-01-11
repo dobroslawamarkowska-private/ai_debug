@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: scraper-lodz
+  labels:
+    city: lodz
+spec:
+  template:
+    metadata:
+      labels:
+        city: lodz
+    spec:
+      containers:
+      - name: scraper
+        env:
+        - name: CITY
+          value: "lodz"
+        - name: PAGES
+          valueFrom:
+            configMapKeyRef:
+              key: lodz_pages
+
